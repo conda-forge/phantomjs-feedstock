@@ -15,7 +15,7 @@ source:
   sha256: 86dd9a4bf4aee45f1a84c9f61cf1947c1d6dce9b9e8d2a907105da7852460d2f  # [linux64]
 
 build:
-  number: 0
+  number: 1
   script:
     - mkdir -p $PREFIX/bin  # [not win]
     - cp -r bin/phantomjs $PREFIX/bin/phantomjs   # [not win]
@@ -23,19 +23,17 @@ build:
 
 requirements:
   run:
-    - fontconfig 2.12.*  # [linux]
+    - fontconfig  # [linux]
 
 test:
   commands:
     - phantomjs --version
-    - conda inspect linkages -p $PREFIX phantomjs  # [not win]
-    - conda inspect objects -p $PREFIX phantomjs  # [osx]
 
 about:
   home: http://phantomjs.org/
   license: BSD 3-Clause
   license_file: LICENSE.BSD
-  summary: 'Scriptable Headless WebKit.'
+  summary: 'Scriptable Headless WebKit'
 
 extra:
   recipe-maintainers:
